@@ -1,0 +1,22 @@
+# Starts a Postgres Database server listening on port 5433.
+
+# Start from the directory containing this file with command: compose up -d
+
+# Connection details:
+#   - Host: localhost
+#   - Port: 5433
+#   - Database: postgres
+#   - User: postgres
+#   - Password: example
+
+version: '3.1'
+
+services:
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5433:5432
